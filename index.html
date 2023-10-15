@@ -25,17 +25,22 @@
     <label for="origin">Cidade de Origem:</label>
     <select id="origin">
         <option value="" disabled selected>Selecione a cidade de origem</option>
-        <!-- Adicione as opções da lista de cidades aqui -->
     </select>
+    <br>
     
     <label for="destination">Cidade de Destino:</label>
     <select id="destination">
         <option value="" disabled selected>Selecione a cidade de destino</option>
-        <!-- Adicione as opções da lista de cidades aqui -->
+    </select>
+    <br>
+
+    <label for="routeOption">Opção de Rota:</label>
+    <select id="routeOption">
+        <option value="duration">Menor Duração</option>
+        <option value="price">Menor Preço</option>
     </select>
 
     <button id="calculateRoute">Calcular Rota</button>
-
 
     <div id="map"></div>
     <script src="./script.js"></script>
