@@ -15,12 +15,12 @@
     <style>
         #map
         {
-            height: 300px;
-            width: 50%;
+            height: 400px;
+            width: 80%;
         }
     </style>
 </head>
-<body>
+<body class="bg-dark"">
    
 <nav class="navbar navbar-expand-lg  navbar navbar-dark bg-dark ">
     <a class="navbar-brand" href="#">Boat Tour</a>
@@ -30,8 +30,8 @@
     
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
+        <li class="nav-item">
+            <a class="nav-link" href="https://journals.openedition.org/confins/25365?lang=pt">Os transportes e as dinâmicas territoriais no Amazonas<span class="sr-only">(página atual)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="https://github.com/projeto-de-algoritmos/Grafos2_Boat-Tour">Git Hub</a>
@@ -39,8 +39,8 @@
             </div>
     </div>
 </nav>
-
-    <div class="pb-5 mb-5 mx-5 mt-5"> 
+<!--Para mudar a imagen altere o nome em style(t.jpg)-->
+    <div class="pb-5 mb-5 mx-5 mt-5 rounded shadow"  style="background-image: url('t.jpg');"> 
 
 
         <div class="myLoc pb-5 mb-5 mx-5">
@@ -48,53 +48,65 @@
             <div class="col-1"> 
             </div>
             <div class="col-sm">
-                <h1 >Sua localização é:</h1>
+                <h1 style="color: rgb(0, 0, 0);"">Sua localização é:</h1>
             </div>
             <div class="col-sm">
-                <h2></h2>
+                <h2 style="color: rgb(0, 0, 0)";></h2>
             </div>
             </div>
         </div>
 
-        <div class="selectOri pb-5 mx-5">
+
+        <div class="container rounded bg-light shadow">
+        </br>
+            <div class="col text-center"><h1>Amazon Boat Tour</h1></div>
             <div class="row">
-            <div class="col-1"> 
-            </div>
-            <div class="col-sm mx-5 ">
-                <label  for="origin">Cidade de Origem:</label>
-                <select class="btn btn-info" id="origin">
+              <div class="col-md-6 order-md-2 mt-5">
+                <div class="box mt-3">
+                    <div class="box mt-5">
+                        <label style="color: rgb(0, 0, 0)"; for="origin"><h4>Origem: </h4></label>
+                   
+                <select class="btn btn-dark" id="origin">
                     <option  value="" disabled selected>Selecione a cidade de origem</option>
                 </select>
             </div>
-            <div class="col-sm">
-                <label for="destination">Cidade de Destino:</label>
-                <select  class="btn btn-info" id="destination">
-                    <option value="" disabled selected>Selecione a cidade de destino</option>
-                </select>
             </div>
-            </div>
+            <div class="box">
+                <div class="box mt-5">
+                    <label style="color: rgb(0, 0, 0)"; for="destination"><h4>Destino: </h4></label>
+               
+            <select  class="btn btn-dark mb-3" id="destination">
+                <option value="" disabled selected>Selecione a cidade de destino</option>
+            </select>
         </div>
-
-
-        </br>
-
-
-        <div class="selectCalc d-flex justify-content-center pb-3 ">
-            <label for="routeOption"> Opção de Rota : </label>
-            <select  class="btn btn-info ml-3" id="routeOption">
-                <option value="duration"> Menor Duração </option>
-                <option value="price"> Menor Preço </option>
-            </select>  
+            <div class="box">
+                <div class="box mt-5">
+                    <label style="color: rgb(0, 0, 0)"; for="routeOption"> <h4>Opção: </h4> </label>
+               
+                <select  class="btn btn-dark" id="routeOption">
+                    <option value="duration"> Menor Duração </option>
+                    <option value="price"> Menor Preço </option>
+                </select>  
+            </div>
+            </div>
+            <div class="box mb-5 mt-5">
+                <button id="calculateRoute" type="button" class="btn btn-dark">Calcular Rota</button>   
+            </div>
+            </div>
+              </div>
+              <div class="col-md-6 order-md-1 mt-5">
+                <div id="minhaDiv" class="minimizada rounded ">
+                    <div class="container-fluid pb-3" id="map"></div>
+                    <script src="./script.js"></script>
+                </div>
+              </div>
+            </div>
         </div>
 
         
-        
-        <div class="Bot d-flex justify-content-center pb-5 ">
-            <button id="calculateRoute" type="button" class="btn btn-info">Calcular Rota</button>
-        </div>
-
-        <div class="container-fluid pb-3" id="map"></div>
-        <script src="./script.js"></script>
+      
+    
+  
 
     </div> 
 </body>

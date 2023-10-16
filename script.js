@@ -138,6 +138,8 @@ const graph = {
 let h2 = document.querySelector('h2');
 var map;
 
+
+
 var polyline;
 
 var originSelect = document.getElementById('origin');
@@ -215,6 +217,7 @@ function success(position)
 {
     console.log(position);
     h2.textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`
+  
 
     if(map === undefined)
     {
@@ -246,6 +249,8 @@ function success(position)
 
     // var bounds = polyline.getBounds();
     // map.fitBounds(bounds, { padding: [3, 3] });
+
+   
 }
 
 function error(err)
