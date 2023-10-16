@@ -1,113 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet"  href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-    <title>Boat Tour</title>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Amazon Boat Tour</title>
     <style>
-        #map
-        {
-            height: 400px;
-            width: 80%;
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        #atracoesContainer {
+            display: none;
+            /* Ocultar o container por padrão */
         }
     </style>
 </head>
-<body class="bg-dark"">
+
+<body class="bg-dark">
    
-<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-dark ">
-    <a class="navbar-brand" href="#">Boat Tour</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<nav class=" navbar navbar-expand-lg navbar navbar-dark bg-dark ">
+    <a class=" navbar-brand" href="#">Amazon Boat Tour</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="https://journals.openedition.org/confins/25365?lang=pt">Os transportes e as dinâmicas territoriais no Amazonas<span class="sr-only">(página atual)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://github.com/projeto-de-algoritmos/Grafos2_Boat-Tour">Git Hub</a>
-        </li>
-            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://journals.openedition.org/confins/25365?lang=pt">Os transportes e as
+                    dinâmicas territoriais no Amazonas<span class="sr-only">(página atual)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/projeto-de-algoritmos/Grafos2_Boat-Tour">Git Hub</a>
+            </li>
     </div>
 </nav>
-<!--Para mudar a imagen altere o nome em style(t.jpg)-->
-    <div class="pb-5 mb-5 mx-5 mt-5 rounded shadow"  style="background-image: url('t.jpg');"> 
 
+    <!--Para mudar a imagen altere o nome em style(t.jpg)-->
+    <div class="pb-5 mb-1 mx-5 mt-1 rounded shadow" style="background-image: url('t.jpg');">
 
         <div class="myLoc pb-5 mb-5 mx-5">
             <div class="row">
-            <div class="col-1"> 
-            </div>
-            <div class="col-sm">
-                <h1 style="color: rgb(0, 0, 0);"">Sua localização é:</h1>
-            </div>
-            <div class="col-sm">
-                <h2 style="color: rgb(0, 0, 0)";></h2>
-            </div>
-            </div>
-        </div>
-
-
-        <div class="container rounded bg-light shadow">
-        </br>
-            <div class="col text-center"><h1>Amazon Boat Tour</h1></div>
-            <div class="row">
-              <div class="col-md-6 order-md-2 mt-5">
-                <div class="box mt-3">
-                    <div class="box mt-5">
-                        <label style="color: rgb(0, 0, 0)"; for="origin"><h4>Origem: </h4></label>
-                   
-                <select class="btn btn-dark" id="origin">
-                    <option  value="" disabled selected>Selecione a cidade de origem</option>
-                </select>
-            </div>
-            </div>
-            <div class="box">
-                <div class="box mt-5">
-                    <label style="color: rgb(0, 0, 0)"; for="destination"><h4>Destino: </h4></label>
-               
-            <select  class="btn btn-dark mb-3" id="destination">
-                <option value="" disabled selected>Selecione a cidade de destino</option>
-            </select>
-        </div>
-            <div class="box">
-                <div class="box mt-5">
-                    <label style="color: rgb(0, 0, 0)"; for="routeOption"> <h4>Opção: </h4> </label>
-               
-                <select  class="btn btn-dark" id="routeOption">
-                    <option value="duration"> Menor Duração </option>
-                    <option value="price"> Menor Preço </option>
-                </select>  
-            </div>
-            </div>
-            <div class="box mb-5 mt-5">
-                <button id="calculateRoute" type="button" class="btn btn-dark">Calcular Rota</button>   
-            </div>
-            </div>
-              </div>
-              <div class="col-md-6 order-md-1 mt-5">
-                <div id="minhaDiv" class="minimizada rounded ">
-                    <div class="container-fluid pb-3" id="map"></div>
-                    <script src="./script.js"></script>
+                <div class="text-center">
+                    <!-- <h1 style="color: rgb(0, 0, 0);"">Amazon Boat Tour</h1> -->
                 </div>
-              </div>
+                <!-- <div class=" col-sm">
+                        <h2 style="color: rgb(0, 0, 0)" ;></h2>
+                </div> -->
             </div>
         </div>
 
-        
-      
-    
-  
 
-    </div> 
+        <div class="container rounded bg-light shadow p-4">
+            </br>
+            <div class="col text-center">
+                <h1>Calcule a melhor rota!</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 order-md-2 mt-5">
+                    <div>
+                        <div class="box mt-0 d-flex justify-content-center align-items-center">
+                            <label style="color: rgb(0, 0, 0)" ; for="origin">
+                                <h4>Origem: </h4>
+                            </label>
+                            <select class="btn btn-dark mb-1" id="origin">
+                                <option value="" disabled selected>Selecione a cidade de origem</option>
+                            </select>
+                        </div>
+                        <div class="box mt-0 d-flex justify-content-center align-items-center">
+                            <label style="color: rgb(0, 0, 0)" ; for="destination">
+                                <h4>Destino: </h4>
+                            </label>
+
+                            <select class="btn btn-dark  mb-1" id="destination">
+                                <option value="" disabled selected>Selecione a cidade de destino</option>
+                            </select>
+                        </div>
+                        <div class="box d-flex justify-content-center align-items-center">
+                            <div class="box mt-0">
+                                <label style="color: rgb(0, 0, 0)" ; for="routeOption">
+                                    <h4>Opção de rota: </h4>
+                                </label>
+
+                                <select class="btn btn-dark mb-1" id="routeOption">
+                                    <option value="duration"> Menor Duração </option>
+                                    <option value="price"> Menor Preço </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="box mb-0 mt-4 d-flex justify-content-center align-items-center">
+                            <button id="calculateRoute" type="button" class="btn btn-dark btn-lg">Calcular Rota</button>
+                        </div>
+                    </div>
+                    <div class="divAtracoes p-3 mt-5" style="overflow: auto; max-height: 230px;" id="atracoesContainer">
+                        <h4>Atrações na sua rota:</h4>
+                        <ul class="list-unstyled" id="atracoesList" style="text-align: left;"></ul>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1 mt-5">
+                    <div id="minhaDiv" class="minimizada rounded ">
+                        <div class="container-fluid pb-3" id="map"></div>
+                        <script src="./script.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <footer class="text-center mt-3 mb-3 text-light">
+        <p>&copy <a href="https://github.com/charles-serafim">Charles Serafim</a> && <a
+                href="https://github.com/thiago-Cerq">Thiago Cerqueira</a></p>
+    </footer>
 </body>
+
 </html>

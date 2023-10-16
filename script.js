@@ -70,7 +70,7 @@ const graph = {
         'Almeirim': [61, 250],
         'Amaturá': [103, 330],
         'Benjamin Constant': [132, 425],
-        'Brevess': [78, 320],
+        'Breves': [78, 320],
         'Fonte Boa': [66, 245],
         'Itacoatiara': [8, 100],
         'Juruti': [21, 130],
@@ -135,7 +135,32 @@ const graph = {
     }
 };
 
-let h2 = document.querySelector('h2');
+
+
+const touristAttractions = [
+    { city: 'Almeirim', attractions: 'https://almeirim.pa.gov.br/o-municipio/turismo-e-lazer/' },
+    { city: 'Amaturá', attractions: 'https://brasilturismo.com/cidades-do-brasil/amatura' },
+    { city: 'Belém', attractions: 'https://www.viagensecaminhos.com/2014/09/belem.html' },
+    { city: 'Benjamin Constant', attractions: 'https://benjaminconstant.am.gov.br/turismo/?turismo.html' },
+    { city: 'Breves', attractions: 'https://www.buser.com.br/destinos/pontos-turisticos/pa/breves' },
+    { city: 'Fonte Boa', attractions: 'https://www.minube.com.br/o-que-ver/brasil/amazonas/fonte_boa' },
+    { city: 'Itacoatiara', attractions: 'http://semctur-ita.blogspot.com/p/espacos-naturais.html' },
+    { city: 'Juruti', attractions: 'https://melhores-destinos.com/glossario/pontos-turisticos-em-juruti/' },
+    { city: 'Jutaí', attractions: 'https://melhores-destinos.com/glossario/o-que-fazer-em-jutai/' },
+    { city: 'Manaus', attractions: 'https://www.segueviagem.com.br/destino-nacional/o-que-fazer-em-manaus-amazonas/' },
+    { city: 'Monte Alegre', attractions: 'http://pportalparamazonia.blogspot.com/2016/05/monte-alegre-para-o-que-ver-e-fazer.html' },
+    { city: 'Óbidos', attractions: 'https://obidos.pa.gov.br/o-municipio/turismo-e-lazer/' },
+    { city: 'Parintins', attractions: 'http://www.amazonastur.am.gov.br/atrativos-turisticos/' },
+    { city: 'Prainha', attractions: 'https://prainha.pa.gov.br/o-municipio/turismo-e-lazer/' },
+    { city: 'Santarém', attractions: 'https://todepassagem.clickbus.com.br/top-destinos/santarem-pa/' },
+    { city: 'Santo Antônio do Içá', attractions: 'https://melhores-destinos.com/glossario/o-que-fazer-em-santo-antonio-do-ica/' },
+    { city: 'São Paulo de Olivença', attractions: 'https://brasilturismo.com/am/sao-paulo-de-olivenca' },
+    { city: 'Tabatinga', attractions: 'https://www.buser.com.br/destinos/pontos-turisticos/am/tabatinga' },
+    { city: 'Tonantins', attractions: 'https://melhores-destinos.com/glossario/o-que-fazer-em-tonantins/' }
+]
+
+
+// let h2 = document.querySelector('h2');
 var map;
 
 
@@ -166,6 +191,7 @@ var endPoint = destinationSelect;
 
 function calculateRoute()
 {
+
     var originCity = originSelect.value;
     var destinationCity = destinationSelect.value;
     var routeOption = routeOptionSelect.value;
@@ -173,6 +199,26 @@ function calculateRoute()
 
     const shortestPath = dijkstra(graph, originCity, destinationCity, routeOption);
     console.log('Caminho mais curto:', shortestPath);
+
+    // Selecione a lista de atrações no DOM
+    const atracoesList = document.getElementById('atracoesList');
+
+    // Limpar a lista atual de atrações
+    atracoesList.innerHTML = '';
+
+    // Itere sobre o array de cidades e crie elementos de lista
+    shortestPath.forEach(city => {
+        const li = document.createElement('li');
+        const textNode = document.createTextNode(city + ": ");
+        li.appendChild(textNode);
+        
+        const link = document.createElement('a');
+        link.href = getAttractionLink(city); // Função para obter o link da atração com base no nome da cidade
+        link.textContent = "Pontos turísticos em " + city;
+        
+        li.appendChild(link);
+        atracoesList.appendChild(li);
+    });
 
     // limpa o mapa (marcadores e polyline)
     if (map)
@@ -204,6 +250,9 @@ function calculateRoute()
         polyline = L.polyline(coordinates, { color: 'red' }).addTo(map);
         var bounds = polyline.getBounds();
         map.fitBounds(bounds, { padding: [10, 10] });
+
+        const atracoesContainer = document.getElementById('atracoesContainer');
+        atracoesContainer.style.display = 'block'; // Tornar o container visível
     }
     else 
     {
@@ -215,8 +264,11 @@ calculateRouteButton.addEventListener('click', calculateRoute);
 
 function success(position)
 {
+    // Parar o rastreamento de localização
+    navigator.geolocation.clearWatch(watchID);
+
     console.log(position);
-    h2.textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`
+    // h2.textContent = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`
   
 
     if(map === undefined)
@@ -261,10 +313,8 @@ function error(err)
 
 var watchID = navigator.geolocation.watchPosition(success, error, {
     enableHighAccuracy: true,
-    timeout: 5000
+    timeout: 50000
 });
-
-// navigator.geolocation.clearWatch(watchID);
 
 
 function dijkstra(graph, start, end, routeOption)
@@ -331,4 +381,10 @@ function dijkstra(graph, start, end, routeOption)
     }
 
     return path;
+}
+
+// função para obter o link da atração com base no nome da cidade
+function getAttractionLink(city) {
+    const attraction = touristAttractions.find(item => item.city === city);
+    return attraction ? attraction.attractions : '#';
 }
