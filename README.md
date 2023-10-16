@@ -1,13 +1,15 @@
-# Boat Tour
+# Amazon Boat Tour
 
 **Número da Lista**: X<br>
 **Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
+
 | Matrícula | Aluno                   |
 | --------- | ----------------------- |
 | 190113596 | Charles Serafim Morais  |
 | 190117508 | Thiago Cerqueira Borges |
+
 
 ## Sobre 
 
@@ -36,12 +38,16 @@ Consulta das rotas pelo menor preço total
 
 ## Instalação 
 
+Para rodar o projeto localmente:
+
 **Linguagem**: JavaScript <br>
 **Framework**: Bootstrap <br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-
 
 ## Uso 
+
+A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link](https://projeto-de-algoritmos.github.io/Grafos2_Boat-Tour/).
+
+Uma vez dentro da aplicação, para gerar os roteiros, basta seguir os seguintes passos:
 
 1° - Selecione local de origem.<br>
 2° - Selecione local de destino.<br>
