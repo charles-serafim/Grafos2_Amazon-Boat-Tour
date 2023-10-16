@@ -26,7 +26,7 @@ Caso queira contribuir com fontes de consulta a rotas, valores e duração de vi
 
 ## Vídeo de apresentação
 
-A execução do programa e explicação da aplicação dos algoritmos e código podem ser vistas no [arquivo do vídeo da apresentação, constante dentro desse repositório](LINK).
+A execução do programa e explicação da aplicação dos algoritmos e código podem ser vistas no [arquivo do vídeo da apresentação, constante dentro desse repositório](https://github.com/projeto-de-algoritmos/Grafos2_Amazon-Boat-Tour/blob/master/Apresenta%C3%A7%C3%A3o_Trabalho_Grafos_2_Amazon_Boat_Tour.mp4).
 
 
 ## Screenshots
