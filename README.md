@@ -24,6 +24,11 @@ A consulta das rotas, preços e duração das viagens foi realizada nos sites [E
 Caso queira contribuir com fontes de consulta a rotas, valores e duração de viagens de barco entre cidades da Amazônia, entre em contato com os contribuidores do projeto.
 
 
+## Vídeo de apresentação
+
+A execução do programa e explicação da aplicação dos algoritmos e código podem ser vistas no [arquivo do vídeo da apresentação, constante dentro desse repositório](LINK).
+
+
 ## Screenshots
 
 Página inicial
