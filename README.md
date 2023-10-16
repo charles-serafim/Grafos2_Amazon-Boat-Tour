@@ -45,7 +45,7 @@ Para rodar o projeto localmente:
 
 ## Uso 
 
-A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link](https://projeto-de-algoritmos.github.io/Grafos2_Boat-Tour/).
+A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link](https://projeto-de-algoritmos.github.io/Grafos2_Amazon-Boat-Tour/).
 
 Uma vez dentro da aplicação, para gerar os roteiros, basta seguir os seguintes passos:
 
