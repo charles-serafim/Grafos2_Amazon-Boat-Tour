@@ -27,13 +27,13 @@ Caso queira contribuir com fontes de consulta a rotas, valores e duração de vi
 ## Screenshots
 
 Página inicial
-![Alt text](image.png)
+![Alt text](image-3.png)
 
 Consulta das rotas pela menor duração
-![Alt text](image-1.png)
+![Alt text](image-4.png)
 
 Consulta das rotas pelo menor preço total
-![Alt text](image-2.png)
+![Alt text](image-5.png)
 
 
 ## Instalação 
