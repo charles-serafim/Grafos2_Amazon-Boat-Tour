@@ -2,6 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -9,7 +11,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
-    <title>Leaflet</title>
+    <title>Boat Tour</title>
     <style>
         #map
         {
@@ -19,30 +21,81 @@
     </style>
 </head>
 <body>
-    <h1>Sua localização é:</h1>
-    <h2></h2>
-
-    <label for="origin">Cidade de Origem:</label>
-    <select id="origin">
-        <option value="" disabled selected>Selecione a cidade de origem</option>
-    </select>
-    <br>
+   
+<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-dark ">
+    <a class="navbar-brand" href="#">Boat Tour</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     
-    <label for="destination">Cidade de Destino:</label>
-    <select id="destination">
-        <option value="" disabled selected>Selecione a cidade de destino</option>
-    </select>
-    <br>
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/projeto-de-algoritmos/Grafos2_Boat-Tour">Git Hub</a>
+        </li>
+            </div>
+    </div>
+</nav>
 
-    <label for="routeOption">Opção de Rota:</label>
-    <select id="routeOption">
-        <option value="duration">Menor Duração</option>
-        <option value="price">Menor Preço</option>
-    </select>
+    <div class="pb-5 mb-5 mx-5 mt-5"> 
 
-    <button id="calculateRoute">Calcular Rota</button>
 
-    <div id="map"></div>
-    <script src="./script.js"></script>
+        <div class="myLoc pb-5 mb-5 mx-5">
+            <div class="row">
+            <div class="col-1"> 
+            </div>
+            <div class="col-sm">
+                <h1 >Sua localização é:</h1>
+            </div>
+            <div class="col-sm">
+                <h2></h2>
+            </div>
+            </div>
+        </div>
+
+        <div class="selectOri pb-5 mx-5">
+            <div class="row">
+            <div class="col-1"> 
+            </div>
+            <div class="col-sm mx-5 ">
+                <label  for="origin">Cidade de Origem:</label>
+                <select class="btn btn-info" id="origin">
+                    <option  value="" disabled selected>Selecione a cidade de origem</option>
+                </select>
+            </div>
+            <div class="col-sm">
+                <label for="destination">Cidade de Destino:</label>
+                <select  class="btn btn-info" id="destination">
+                    <option value="" disabled selected>Selecione a cidade de destino</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+
+        </br>
+
+
+        <div class="selectCalc d-flex justify-content-center pb-3 ">
+            <label for="routeOption"> Opção de Rota : </label>
+            <select  class="btn btn-info ml-3" id="routeOption">
+                <option value="duration"> Menor Duração </option>
+                <option value="price"> Menor Preço </option>
+            </select>  
+        </div>
+
+        
+        
+        <div class="Bot d-flex justify-content-center pb-5 ">
+            <button id="calculateRoute" type="button" class="btn btn-info">Calcular Rota</button>
+        </div>
+
+        <div class="container-fluid pb-3" id="map"></div>
+        <script src="./script.js"></script>
+
+    </div> 
 </body>
 </html>
