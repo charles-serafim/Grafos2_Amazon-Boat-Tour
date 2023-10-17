@@ -309,6 +309,12 @@ function error(err)
 {
     console.log(err);
 
+    // utiliza as coordenadas de brasília caso o usuário de recuse a fornecer a sua localização
+    map = L.map('map').setView([-15.7801, -47.9292], 5);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map); 
+    L.marker([-15.7801, -47.9292]).addTo(map).bindPopup('Sua localização').openPopup();
 }
 
 var watchID = navigator.geolocation.watchPosition(success, error, {
@@ -335,6 +341,7 @@ function dijkstra(graph, start, end, routeOption)
     // inicializa uma fila de prioridade com a cidade de partida
     const queue = [start];
 
+    // enquanto a fila de prioridade não estiver vazia, encontra o custo mais baixo para alcançar a cidade, remove-a da fila e atualiza os custos e caminhos mais baixos para cada vizinhança, se necessário, adicionando-os à fila de prioridade, para que eles possam ser processados ​​mais tarde, e assim por diante até que a fila esteja vazia, o que significa que todos os caminhos possíveis foram explorados, e o custo mais baixo para alcançar o destino foi encontrado
     while (queue.length)
     {
         // encontra a cidade com o custo mais baixo na fila de prioridade
@@ -345,6 +352,7 @@ function dijkstra(graph, start, end, routeOption)
         // remove a cidade atual da fila de prioridade
         queue.splice(queue.indexOf(currentCity), 1);
 
+        // se a cidade atual for o destino, o custo mais baixo para alcançá-lo foi encontrado, então pare
         for (const neighbor in graph[currentCity])
         {
             let weight; // variável para armazenar o peso com base na opção selecionada
@@ -358,6 +366,7 @@ function dijkstra(graph, start, end, routeOption)
             // calcula o novo custo para chegar à vizinhança passando pela cidade atual
             const alt = cost[currentCity] + weight;
 
+            // se o novo custo for menor que o custo atual para alcançar a vizinhança, atualize o custo e o caminho mais baixos para a vizinhança e adicione-a à fila de prioridade
             if (alt < cost[neighbor]) {
                 // atualiza o custo mais baixo para a vizinhança
                 cost[neighbor] = alt;
@@ -374,6 +383,8 @@ function dijkstra(graph, start, end, routeOption)
     // reconstrói o caminho mais curto a partir do destino até a cidade de partida
     const path = [];
     let currentCity = end;
+
+    // enquanto a cidade atual não for a cidade de partida, adiciona-a ao caminho, e atualiza a cidade atual para a cidade que levou à cidade atual
     while (currentCity)
     {
         path.unshift(currentCity);
