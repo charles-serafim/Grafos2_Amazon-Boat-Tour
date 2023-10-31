@@ -13,15 +13,10 @@
 
 ## Sobre 
 
-O objetivo do trabalho é fornecer uma aplicação que permita ao usuário calcular possíveis roteiros de viagem entre cidades amazônicas acessíveis através de viagens de barco, transporte bastante utilizado em algumas cidades devido à presença de diversos rios na região. A aplicação fornece ainda acesso a matérias e artigos indicando pontos turísticos das cidades a serem visitadas no roteiro gerado.
+No ano de 2024, o mundo voltará seus olhos para a cidade de Paris, onde atletas de elite de todo o globo se reunirão para competir nos Jogos Olímpicos, um dos eventos mais grandiosos e inspiradores do esporte. Com tantas modalidades emocionantes e eventos imperdíveis, fãs e entusiastas olímpicos de todos os lugares estarão ansiosos por maneiras de acompanhar cada salto, corrida e recorde mundial estabelecido. É aqui que entra nossa aplicação.
 
-Para os cálculos dos caminhos de menor duração ou de menor preço total, foi utilizado o [algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra), como forma de aplicação prática dos conteúdos abordados no módulo Grafos 2 da disciplina de Projeto de Algoritmos, do curso de Engenharia de Software da Universidade de Brasília.
 
-O mapa, assim como a visualização das rotas, foi feito utilizando as ferramentas [Leaflet](https://leafletjs.com/) e [Open Street Map](https://www.openstreetmap.org/).
-
-A consulta das rotas, preços e duração das viagens foi realizada nos sites [E-commerce Navegam](https://navegam.com.br/) e [iBarco](ibarco.com.br/).
-
-Caso queira contribuir com fontes de consulta a rotas, valores e duração de viagens de barco entre cidades da Amazônia, entre em contato com os contribuidores do projeto.
+O objetivo do nosso trabalho é fornecer uma aplicação baseada em um dos algoritmos apresentados durante a aula de Programação Avançada. Essa aplicação permitirá que qualquer pessoa crie roteiros personalizados para acompanhar todas as modalidades das Olimpíadas de 2024, que acontecerão na deslumbrante cidade de Paris. Esta aplicação será a sua chave para explorar o evento esportivo mais grandioso do mundo de uma maneira que permitirá desfrutar de diversas modalidades esportivas.
 
 
 ## Vídeo de apresentação
@@ -32,13 +27,16 @@ A execução do programa e explicação da aplicação dos algoritmos e código 
 ## Screenshots
 
 Página inicial
-![Alt text](image-3.png)
+![image](https://github.com/projeto-de-algoritmos/Grafos2_Amazon-Boat-Tour/assets/65683663/1d96a88b-a16d-424d-86ee-f62810f10164)
 
-Consulta das rotas pela menor duração
-![Alt text](image-5.png)
 
-Consulta das rotas pelo menor preço total
-![Alt text](image.png)
+Selecionando modalidades
+![image](https://github.com/projeto-de-algoritmos/Grafos2_Amazon-Boat-Tour/assets/65683663/8f175626-2e3a-46e5-a1f7-c060564cab5b)
+
+
+Gerando roteiro
+![image](https://github.com/projeto-de-algoritmos/Grafos2_Amazon-Boat-Tour/assets/65683663/08f3d2a8-3dea-4254-a956-03f2f6f45138)
+
 
 
 ## Instalação 
@@ -50,11 +48,10 @@ Para rodar o projeto localmente:
 
 ## Uso 
 
-A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link](https://projeto-de-algoritmos.github.io/Grafos2_Amazon-Boat-Tour/).
+A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link]([https://projeto-de-algoritmos.github.io/Grafos2_Amazon-Boat-Tour/](https://projeto-de-algoritmos.github.io/Greed_OlympicSchedule/)).
 
 Uma vez dentro da aplicação, para gerar os roteiros, basta seguir os seguintes passos:
 
-1° - Selecione local de origem.<br>
-2° - Selecione local de destino.<br>
-3° - Selecione a opção de Rota.<br>
-4° - Selecione Calcular Rota.<br>
+1° - Selecione modalidades de sua preferência.<br>
+2° - Selecione Montar Roteiro.<br>
+
