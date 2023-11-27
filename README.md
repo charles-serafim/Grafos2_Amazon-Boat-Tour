@@ -1,60 +1,57 @@
 # Amazon Boat Tour
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: Grafos 2<br>
+## Students
 
-## Alunos
-
-| Matrícula | Aluno                   |
-| --------- | ----------------------- |
-| 190113596 | Charles Serafim Morais  |
-| 190117508 | Thiago Cerqueira Borges |
+| Reg. number | Student                 |
+| ----------- | ----------------------- |
+| 190113596   | Charles Serafim Morais  |
+| 190117508   | Thiago Cerqueira Borges |
 
 
-## Sobre 
+## About
 
-O objetivo do trabalho é fornecer uma aplicação que permita ao usuário calcular possíveis roteiros de viagem entre cidades amazônicas acessíveis através de viagens de barco, transporte bastante utilizado em algumas cidades devido à presença de diversos rios na região. A aplicação fornece ainda acesso a matérias e artigos indicando pontos turísticos das cidades a serem visitadas no roteiro gerado.
+The objective of the project is to provide an application that allows the user to calculate possible travel itineraries between accessible Amazonian cities via boat trips, a commonly used mode of transportation in some cities due to the presence of numerous rivers in the region. The application also provides access to materials and articles indicating tourist attractions in the cities to be visited in the generated itinerary.
 
-Para os cálculos dos caminhos de menor duração ou de menor preço total, foi utilizado o [algoritmo de Dijkstra](https://pt.wikipedia.org/wiki/Algoritmo_de_Dijkstra), como forma de aplicação prática dos conteúdos abordados no módulo Grafos 2 da disciplina de Projeto de Algoritmos, do curso de Engenharia de Software da Universidade de Brasília.
+For the calculations of the shortest duration or the least total price routes, the [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) was employed as a practical application of the content covered in the Graphs 2 module of the Algorithms Design course in the Software Engineering program at the University of Brasília.
 
-O mapa, assim como a visualização das rotas, foi feito utilizando as ferramentas [Leaflet](https://leafletjs.com/) e [Open Street Map](https://www.openstreetmap.org/).
+The map, as well as the route visualization, was created using the [Leaflet](https://leafletjs.com/) and [Open Street Map](https://www.openstreetmap.org/) tools.
 
-A consulta das rotas, preços e duração das viagens foi realizada nos sites [E-commerce Navegam](https://navegam.com.br/) e [iBarco](ibarco.com.br/).
+Route, price, and duration information for boat trips were obtained from the [Navegam E-commerce](https://navegam.com.br/) and [iBarco](ibarco.com.br/) websites.
 
-Caso queira contribuir com fontes de consulta a rotas, valores e duração de viagens de barco entre cidades da Amazônia, entre em contato com os contribuidores do projeto.
+If you would like to contribute information regarding routes, prices, and duration of boat trips between cities in the Amazon, please contact the project contributors.
 
 
-## Vídeo de apresentação
+## Presentation Video (In Portuguese)
 
-A execução do programa e explicação da aplicação dos algoritmos e código podem ser vistas através de download do [arquivo do vídeo da apresentação, constante dentro desse repositório](https://github.com/projeto-de-algoritmos/Grafos2_Amazon-Boat-Tour/blob/master/Apresenta%C3%A7%C3%A3o_Trabalho_Grafos_2_Amazon_Boat_Tour.mp4) ou no [YouTube](https://www.youtube.com/watch?v=8hWu22xi3HM).
+The program execution and explanation of the application of algorithms and code can be viewed by downloading the [file](https://github.com/charles-serafim/Grafos2_Amazon-Boat-Tour/raw/master/Apresenta%C3%A7%C3%A3o_Trabalho_Grafos_2_Amazon_Boat_Tour.mp4) or in [YouTube](https://www.youtube.com/watch?v=8hWu22xi3HM).
 
 
 ## Screenshots
 
-Página inicial
+Home page
 ![Alt text](image-3.png)
 
-Consulta das rotas pela menor duração
+Consulting routes with least duration
 ![Alt text](image-5.png)
 
-Consulta das rotas pelo menor preço total
+Consulting routes with least total price
 ![Alt text](image.png)
 
 
-## Instalação 
+## Installation
 
-Para rodar o projeto localmente:
+To run the project locally:
 
-**Linguagem**: JavaScript <br>
+**Language**: JavaScript <br>
 **Framework**: Bootstrap <br>
 
-## Uso 
+## Using
 
-A aplicação pode ser utilizada no GitHub Pages do projeto, acessível através deste [link](https://projeto-de-algoritmos.github.io/Grafos2_Amazon-Boat-Tour/).
+The application can be used on the project's GitHub Pages, accessible through this [link](https://charles-serafim.github.io/Grafos2_Amazon-Boat-Tour/).
 
-Uma vez dentro da aplicação, para gerar os roteiros, basta seguir os seguintes passos:
+Once inside the application, to generate the itineraries, just follow these steps:
 
-1° - Selecione local de origem.<br>
-2° - Selecione local de destino.<br>
-3° - Selecione a opção de Rota.<br>
-4° - Selecione Calcular Rota.<br>
+1 - Select the starting location.<br>
+2 - Select the destination.<br>
+3 - Choose the route option.<br>
+4 - Select Calculate Route.<br>

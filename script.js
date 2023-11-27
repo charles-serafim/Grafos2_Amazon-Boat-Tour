@@ -214,7 +214,7 @@ function calculateRoute()
         
         const link = document.createElement('a');
         link.href = getAttractionLink(city); // Função para obter o link da atração com base no nome da cidade
-        link.textContent = "Pontos turísticos em " + city;
+        link.textContent = "Tourist attractions in " + city;
         
         li.appendChild(link);
         atracoesList.appendChild(li);
